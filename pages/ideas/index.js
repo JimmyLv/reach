@@ -10,7 +10,7 @@ export default class extends Component {
     }
 
     const database = firebase.database()
-    const userId = firebase.auth().currentUser.uid
+    const userId = firebase.auth().currentUser?.uid
     database.ref('/users/' + userId).once('value').then((snapshot) => {
       this.setState({
         username: (snapshot.val() && snapshot.val().username) || 'Anonymous',
@@ -22,7 +22,7 @@ export default class extends Component {
   render() {
     const { location: query } = this.props
     const { username } = this.state
-    const user = firebase.auth().currentUser
+    const user = firebase.auth().currentUser || {}
 
     return (
       <div>

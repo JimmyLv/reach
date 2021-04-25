@@ -4,7 +4,7 @@ import NewIdea from '../../components/NewIdea'
 import firebase from '../../services/firebase'
 
 export default () => {
-  const user = firebase.auth().currentUser
+  const user = firebase.auth().currentUser || {}
   if (user) {
     return (
       <div>

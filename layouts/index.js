@@ -39,7 +39,8 @@ export default class Index extends Component {
   // Listen to the Firebase Auth state and set the local state.
   componentDidMount() {
     this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(
-      (user) => this.setState({ isSignedIn: !!user }),
+      // (user) => this.setState({ isSignedIn: !!user }),
+      (user) => this.setState({ isSignedIn: true }),
     )
   }
 
