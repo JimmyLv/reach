@@ -15,7 +15,7 @@ export default class Index extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      isSignedIn: false // Local signed-in state.
+      isSignedIn: true // Local signed-in state.
     }
   }
 
